@@ -5,13 +5,13 @@
     return words;
 }
 
-string[] FilterText(string[] text)
+string[] FilterText(string[] text, int elementLength)
 {
     int count = 0;
     for (int i = 0; i < text.Length; i++)
     {
         int length = text[i].Length;
-        if (length <= 3)
+        if (length <= elementLength)
         {
             text[count] = text[i];
             count++;
@@ -42,10 +42,11 @@ string myString = @"Однажды весною, в час небывало жа
 Второй – плечистый, рыжеватый, вихрастый молодой человек в заломленной на затылок клетчатой кепке 
 – был в ковбойке, жеваных белых брюках и в черных тапочках.";
 
+int elementLength = 3;
 string[] wordsArray = ConvertStringToArray(myString);
 Console.WriteLine($"original array:");
 PrintArray(wordsArray);
 Console.WriteLine();
-wordsArray = FilterText(wordsArray);
+wordsArray = FilterText(wordsArray, elementLength);
 Console.WriteLine($"filtered array:");
 PrintArray(wordsArray);

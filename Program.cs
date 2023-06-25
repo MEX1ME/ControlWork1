@@ -1,6 +1,6 @@
 ﻿string[] ConvertStringToArray(string newString)
 {
-    char[] delimiterChars = { ' ', ',', '.', '\r', '\n' };
+    char[] delimiterChars = { ' ', ',', '.', '\r', '\n', '\t' };
     string[] words = newString.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
     return words;
 }
